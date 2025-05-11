@@ -36,13 +36,16 @@ public class MainActivity extends AppCompatActivity {
                 // Tampilkan password (atau bisa diganti dengan logika login asli)
 
 
-                // Contoh validasi sederhana
-                if (email.isEmpty() || password.isEmpty()) {
-                    Toast.makeText(MainActivity.this, "Please fill in all fields", Toast.LENGTH_SHORT).show();
+                if (email.equals("arsya") && password.equals("123456")) {
+                    // Login berhasil
+                    Intent intent = new Intent(MainActivity.this, Home1.class);
+                    startActivity(intent);
+                    finish();
                 } else {
-                    // Lakukan proses login di sini
-
+                    // Login gagal
+                    Toast.makeText(MainActivity.this, "Email atau password salah", Toast.LENGTH_SHORT).show();
                 }
+
             }
         });
 
